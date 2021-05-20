@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Орбіта Місяця навколо Землі на CSS3</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url(images/cosmos.jpg);
+            background-size: cover;
+        }
+
+        @keyframes orbita {
+            0% {
+                width: 110px;
+                z-index: 0;
+            }
+
+            25% {
+                top: 110px;
+                left: 610px;
+                width: 125px;
+                z-index: 0;
+            }
+
+            50% {
+                top: 385px;
+                left: 290px;
+                width: 140px;
+                z-index: 2;
+            }
+
+            75% {
+                top: 485px;
+                left: 30px;
+                width: 125px;
+                z-index: 0;
+            }
+
+            100% {
+                width: 110px;
+                transform: rotate(360deg)
+            }
+        }
+
+        #earth {
+            padding: 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #moon {
+            position: absolute;
+            top: 260px;
+            left: 250px;
+            z-index: 0;
+            animation: 5s orbita linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/earth.png" alt="mars" id="earth">
+    <img src="images/moon.png" alt="phobos" id="moon">
+</body>
+
+</html>
